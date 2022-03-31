@@ -3,12 +3,13 @@ import { Text, View, StyleSheet, ActivityIndicator, Image, ScrollView } from 're
 import Constants from 'expo-constants';
 import * as Location from "expo-location"
 import axios from "axios"
+import API_TOKEN from '@env'
 
 
 import CurrentWeather from "./components/CurrentWeather"
 import Forecasts from "./components/Forecasts"
 
-const API_URL = (lat, lon) =>`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=e22cceb26e453c2c4e70f2caccf521c6&lang=fr&units=metric`
+const API_URL = (lat, lon) =>`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_TOKEN}&lang=fr&units=metric`
 
 export default function App() {
   // 1- recup les coordonnees de user
